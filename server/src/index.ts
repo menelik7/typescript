@@ -2,6 +2,8 @@ import express from "express";
 import { router } from "./routes/loginRoutes";
 import { urlencoded } from "body-parser";
 import cookieSession from "cookie-session";
+import { AppRouter } from "./AppRouter";
+import "./controllers/LoginController";
 
 const app = express();
 
@@ -12,6 +14,7 @@ app.use(
 	})
 );
 app.use(router);
+app.use(AppRouter.getInstance());
 
 const PORT = process.env.PORT || 3000;
 
