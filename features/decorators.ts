@@ -23,15 +23,15 @@ class Boat {
 }
 
 function classDecorator(constructor: typeof Boat) {
-	console.log(constructor);
+	console.log("Class decorator", constructor);
 }
 
 function parameterDecorator(target: any, key: string, index: number) {
-	console.log(key, index);
+	console.log("Parameter decorator", key, index);
 }
 
 function testDecorator(target: any, key: string) {
-	console.log(key);
+	console.log("Test decorator", key);
 }
 
 function logError(errorMessage: string) {
@@ -42,7 +42,7 @@ function logError(errorMessage: string) {
 			try {
 				method();
 			} catch (err) {
-				console.log(errorMessage);
+				console.log("Log error", errorMessage);
 			}
 		};
 	};
